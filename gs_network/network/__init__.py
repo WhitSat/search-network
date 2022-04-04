@@ -7,4 +7,4 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///network.db'
 db = SQLAlchemy(app)
 
-from network import routes
+from network import route
