@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+<!-- Tab title block -->
+{% block title %}
+  Search
+{% endblock %}
+
+<!-- Page content block -->
+{% block content %}
+  <table class="table table-hover table-dark">
+      <thead>
+          <tr>
+              <!-- Your Columns HERE -->
+              <th scope="col">NORAD ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Inclination (degrees)</th>
+              <th scope="col">Eccentricity</th>
+              <th scope="col">Apogee (km)</th>
+              <th scope="col">Data age (days)</th>
+          </tr>
+      </thead>
+      <tbody>
+          <!-- Your rows inside the table HERE: -->
+          {% for item in satellites %}
+              <tr>
+                  <td>{{ item.norad_id }}</td>
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.inclination }}</td>
+                  <td>{{ item.eccentricity }}$</td>
+                  <td>{{ item.apogee }}$</td>
+                  <td>{{ item.epoch_age }}$</td>
+                  <td>
+                      <button class="btn btn-outline btn-info">More Info</button>
+                  </td>
+              </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+{% endblock %}
